@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ParkCity — Smart City Parking</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-logo"><span class="logo-dot"></span> ParkCity</div>
+    <div class="nav-links">
+      <span class="active" onclick="switchTab('overview')">Overview</span>
+      <span onclick="switchTab('book')">Book</span>
+      <span onclick="switchTab('passes')">Passes</span>
+      <span onclick="switchTab('mybookings')">My bookings</span>
+    </div>
+    <button class="nav-btn" onclick="showToast('Sign in to access your account')">Sign in</button>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero" id="hero-section">
+    <h1>Find parking in seconds</h1>
+    <p>Real-time availability across 14 city zones. Reserve a spot before you leave home.</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Enter a street or zone name..." id="search-input" />
+      <button onclick="doSearch()">Find spots</button>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" id="tab-overview" onclick="switchTab('overview')">Live availability</div>
+    <div class="tab" id="tab-book" onclick="switchTab('book')">Book a spot</div>
+    <div class="tab" id="tab-passes" onclick="switchTab('passes')">Monthly passes</div>
+    <div class="tab" id="tab-mybookings" onclick="switchTab('mybookings')">My bookings</div>
+  </div>
+
+  <!-- Main content area -->
+  <div class="content" id="main-content"></div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
